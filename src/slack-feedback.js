@@ -402,7 +402,8 @@ class SlackFeedback extends React.Component {
                     title={type.label}
                     onClick={this.selectType(type.value)}
                   >
-                    {type.label}
+                    {this.translate(`feedback.type.${type.label.toLowerCase()}`)}
+                    {/* {type.label} */}
                   </li>
                 ))}
               </Tabs>
