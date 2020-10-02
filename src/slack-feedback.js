@@ -435,7 +435,7 @@ class SlackFeedback extends React.Component {
 
           <Trigger className={cx({ active: open })} onClick={this.toggle}>
             {this.props.showIcon ? <Icon /> : null}{' '}
-            {this.translate('trigger.text')}
+            {this.props.showTriggerText ? this.translate('trigger.text') : ''}
           </Trigger>
         </StyledSlackFeedback>
       </ThemeProvider>
@@ -463,6 +463,7 @@ SlackFeedback.propTypes = {
   sentTimeout: PropTypes.number,
   showChannel: PropTypes.bool,
   showIcon: PropTypes.bool,
+  showTriggerText: PropTypes.bool,
   theme: PropTypes.object,
   translations: PropTypes.object,
   user: PropTypes.string
@@ -488,6 +489,7 @@ SlackFeedback.defaultProps = {
   sentTimeout: 5 * 1000,
   showChannel: true,
   showIcon: true,
+  showTriggerText: true,
   theme: defaultTheme,
   translations: defaultTranslations,
   user: 'Anonymous'
